@@ -67,7 +67,7 @@ This is an example of how to list things you need to use the software and how to
 
 Install the package with Composer
 ```sh
-composer install carlwhittick/vehicle.faker
+composer require carlwhittick/vehicle.faker
 ```
 
 Add the provider to Faker
