@@ -93,6 +93,7 @@ echo $faker->model('BMW'); // 3 series
 echo $faker->registration('current'); // AB19 ETG
 echo $faker->registration('military'); // 11AE22 
 echo $faker->registration('diplomatic'); // 101D454 
+echo $faker->registration('prefix'); // P311 LVW 
 
 ```
 
