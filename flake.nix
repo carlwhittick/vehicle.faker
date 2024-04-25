@@ -24,8 +24,8 @@
             # php83Extensions.mbstring
             # php83Extensions.pcov
             # php83Extensions.xdebug
-            # phpunit
             fish
+            gh
           ];
 
           shellHook = ''
