@@ -303,6 +303,12 @@ class Vehicle extends Base
       ],
     ];
 
+    protected static $sequence = [
+      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+      'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+      'U', 'V', 'W', 'X', 'Y', 'Z',
+    ];
+
     protected static $registrationTypes = [
       'current',
       'military',
@@ -324,7 +330,7 @@ class Vehicle extends Base
         return $local . static::randomElement(static::$oldRegistrationLocalePrefix[$local]);
     }
 
-    public static function vehicleRegistrationAgeId(): int
+    public static function vehicleRegistrationAgeId(): string
     {
         $date = DateTime::dateTimeBetween('1 September 2001');
         $age = $date->format('y');
@@ -340,17 +346,17 @@ class Vehicle extends Base
     {
         return static::randomElement(array_keys(static::$makesWithModels));
     }
-    /**
-     * @param mixed $make
-     */
-    public function model($make = null): string
+
+    public function model(string $make = null): string
     {
         return static::randomElement(static::$makesWithModels[$make ?: static::make()]);
     }
 
-    public function registration(): string
+    public function registration(string $registrationType = null): string
     {
-        $registrationType = static::randomElement(static::$registrationTypes);
+        if(!$registrationType) {
+            $registrationType = static::randomElement(static::$registrationTypes);
+        }
 
         switch ($registrationType) {
             case 'current':
@@ -358,7 +364,7 @@ class Vehicle extends Base
                 $age = static::vehicleRegistrationAgeId();
                 $sequence = implode(static::randomElements(static::$sequence, 3));
 
-                return "{$locale}{$age}{$sequence}";
+                return "{$locale}{$age} {$sequence}";
                 break;
             case 'military':
                 return static::bothify('??##??');

@@ -1983,6 +1983,7 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "fakerphp/faker",
         "myclabs/deep-copy",
         "nikic/php-parser",
         "phar-io/manifest",
@@ -1994,6 +1995,7 @@
         "phpunit/php-text-template",
         "phpunit/php-timer",
         "phpunit/phpunit",
+        "psr/container",
         "sebastian/cli-parser",
         "sebastian/code-unit",
         "sebastian/code-unit-reverse-lookup",
@@ -2009,6 +2011,7 @@
         "sebastian/recursion-context",
         "sebastian/type",
         "sebastian/version",
+        "symfony/deprecation-contracts",
         "theseer/tokenizer"
     ]
 }
